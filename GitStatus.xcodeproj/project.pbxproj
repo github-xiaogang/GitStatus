@@ -11,6 +11,14 @@
 		1F01F2F01CD8ECDE0059E9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F2EF1CD8ECDE0059E9D2 /* main.m */; };
 		1F01F2F21CD8ECDE0059E9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */; };
 		1F01F2F51CD8ECDE0059E9D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F01F2F31CD8ECDE0059E9D2 /* MainMenu.xib */; };
+		1F01F2FF1CD8F53F0059E9D2 /* CmdUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F2FE1CD8F53F0059E9D2 /* CmdUtil.m */; };
+		1F01F3061CD8F6D30059E9D2 /* GitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3051CD8F6D30059E9D2 /* GitUtil.m */; };
+		1F01F3091CD8F9780059E9D2 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3081CD8F9780059E9D2 /* FileUtil.m */; };
+		1F01F30E1CD8FB8F0059E9D2 /* TestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F30D1CD8FB8F0059E9D2 /* TestUtil.m */; };
+		1F01F3131CD905960059E9D2 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3121CD905960059E9D2 /* Repository.m */; };
+		1F01F3161CD9059D0059E9D2 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3151CD9059D0059E9D2 /* Branch.m */; };
+		1F01F3181CD907990059E9D2 /* repo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F01F3171CD907990059E9D2 /* repo.plist */; };
+		1F01F31F1CD908C30059E9D2 /* RepoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F31E1CD908C30059E9D2 /* RepoUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +29,22 @@
 		1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F01F2F41CD8ECDE0059E9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1F01F2F61CD8ECDE0059E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F01F2FD1CD8F53F0059E9D2 /* CmdUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdUtil.h; sourceTree = "<group>"; };
+		1F01F2FE1CD8F53F0059E9D2 /* CmdUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmdUtil.m; sourceTree = "<group>"; };
+		1F01F3041CD8F6D30059E9D2 /* GitUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitUtil.h; sourceTree = "<group>"; };
+		1F01F3051CD8F6D30059E9D2 /* GitUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitUtil.m; sourceTree = "<group>"; };
+		1F01F3071CD8F9780059E9D2 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtil.h; sourceTree = "<group>"; };
+		1F01F3081CD8F9780059E9D2 /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtil.m; sourceTree = "<group>"; };
+		1F01F30A1CD8F9D80059E9D2 /* gitstatus.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gitstatus.pch; sourceTree = "<group>"; };
+		1F01F30C1CD8FB8F0059E9D2 /* TestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtil.h; sourceTree = "<group>"; };
+		1F01F30D1CD8FB8F0059E9D2 /* TestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtil.m; sourceTree = "<group>"; };
+		1F01F3111CD905960059E9D2 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		1F01F3121CD905960059E9D2 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		1F01F3141CD9059D0059E9D2 /* Branch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Branch.h; sourceTree = "<group>"; };
+		1F01F3151CD9059D0059E9D2 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
+		1F01F3171CD907990059E9D2 /* repo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repo.plist; sourceTree = "<group>"; };
+		1F01F31D1CD908C30059E9D2 /* RepoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoUtil.h; sourceTree = "<group>"; };
+		1F01F31E1CD908C30059E9D2 /* RepoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +77,11 @@
 		1F01F2EA1CD8ECDE0059E9D2 /* GitStatus */ = {
 			isa = PBXGroup;
 			children = (
+				1F01F30B1CD8FB790059E9D2 /* Test */,
+				1F01F2FC1CD8F50E0059E9D2 /* util */,
+				1F01F3001CD8F66F0059E9D2 /* GitUtil */,
+				1F01F3101CD905080059E9D2 /* domain */,
+				1F01F3191CD908400059E9D2 /* dao */,
 				1F01F2EB1CD8ECDE0059E9D2 /* AppDelegate.h */,
 				1F01F2EC1CD8ECDE0059E9D2 /* AppDelegate.m */,
 				1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */,
@@ -67,8 +96,59 @@
 			isa = PBXGroup;
 			children = (
 				1F01F2EF1CD8ECDE0059E9D2 /* main.m */,
+				1F01F30A1CD8F9D80059E9D2 /* gitstatus.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F01F2FC1CD8F50E0059E9D2 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				1F01F2FD1CD8F53F0059E9D2 /* CmdUtil.h */,
+				1F01F2FE1CD8F53F0059E9D2 /* CmdUtil.m */,
+				1F01F3071CD8F9780059E9D2 /* FileUtil.h */,
+				1F01F3081CD8F9780059E9D2 /* FileUtil.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		1F01F3001CD8F66F0059E9D2 /* GitUtil */ = {
+			isa = PBXGroup;
+			children = (
+				1F01F3041CD8F6D30059E9D2 /* GitUtil.h */,
+				1F01F3051CD8F6D30059E9D2 /* GitUtil.m */,
+			);
+			path = GitUtil;
+			sourceTree = "<group>";
+		};
+		1F01F30B1CD8FB790059E9D2 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				1F01F30C1CD8FB8F0059E9D2 /* TestUtil.h */,
+				1F01F30D1CD8FB8F0059E9D2 /* TestUtil.m */,
+				1F01F3171CD907990059E9D2 /* repo.plist */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		1F01F3101CD905080059E9D2 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				1F01F3111CD905960059E9D2 /* Repository.h */,
+				1F01F3121CD905960059E9D2 /* Repository.m */,
+				1F01F3141CD9059D0059E9D2 /* Branch.h */,
+				1F01F3151CD9059D0059E9D2 /* Branch.m */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		1F01F3191CD908400059E9D2 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				1F01F31D1CD908C30059E9D2 /* RepoUtil.h */,
+				1F01F31E1CD908C30059E9D2 /* RepoUtil.m */,
+			);
+			path = dao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +210,7 @@
 			files = (
 				1F01F2F21CD8ECDE0059E9D2 /* Assets.xcassets in Resources */,
 				1F01F2F51CD8ECDE0059E9D2 /* MainMenu.xib in Resources */,
+				1F01F3181CD907990059E9D2 /* repo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F01F3131CD905960059E9D2 /* Repository.m in Sources */,
+				1F01F3161CD9059D0059E9D2 /* Branch.m in Sources */,
+				1F01F31F1CD908C30059E9D2 /* RepoUtil.m in Sources */,
+				1F01F3091CD8F9780059E9D2 /* FileUtil.m in Sources */,
+				1F01F30E1CD8FB8F0059E9D2 /* TestUtil.m in Sources */,
 				1F01F2F01CD8ECDE0059E9D2 /* main.m in Sources */,
+				1F01F2FF1CD8F53F0059E9D2 /* CmdUtil.m in Sources */,
+				1F01F3061CD8F6D30059E9D2 /* GitUtil.m in Sources */,
 				1F01F2ED1CD8ECDE0059E9D2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +333,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/zhangxiaogang/Project/GitStatus/GitStatus/gitstatus.pch;
 				INFOPLIST_FILE = GitStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyeah.GitStatus;
@@ -257,6 +347,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/zhangxiaogang/Project/GitStatus/GitStatus/gitstatus.pch;
 				INFOPLIST_FILE = GitStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyeah.GitStatus;
