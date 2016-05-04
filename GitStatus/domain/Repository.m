@@ -10,5 +10,21 @@
 
 @implementation Repository
 
+- (BOOL)isSafe
+{
+    BOOL result = YES;
+    Branch * currentBranch = nil;
+    for (Branch * branch in self.branchList) {
+        if(branch.isCurrent){
+            currentBranch = branch;
+            break;
+        }
+    }
+    if(currentBranch.isStable){
+        result = NO;
+    }
+    return result;
+}
+
 
 @end

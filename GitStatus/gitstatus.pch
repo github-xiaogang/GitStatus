@@ -12,11 +12,16 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+@import Foundation;
+@import AppKit;
+
+
 #import "CmdUtil.h"
 #import "FileUtil.h"
 #import "GitUtil.h"
 #import "Branch.h"
 #import "Repository.h"
+#import "Appearance.h"
 
 
 #endif /* gitstatus_pch */

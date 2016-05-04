@@ -8,18 +8,31 @@
 
 #import "AppDelegate.h"
 #import "TestUtil.h"
+#import "RepoWindowController.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+@property (nonatomic, strong) RepoWindowController * repoWC;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    /*
     [TestUtil setup];
     [TestUtil test];
+     */
+    [self doMainRoutine];
+}
+
+- (void)doMainRoutine
+{
+    RepoWindowController * repoWC = [[RepoWindowController alloc] initWithWindowNibName:@"RepoWindowController"];
+    self.repoWC = repoWC;
+    [repoWC showWindow:nil];
+    [repoWC.window makeMainWindow];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

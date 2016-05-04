@@ -11,7 +11,7 @@
 @interface Branch : NSObject
 
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, assign) BOOL stable;
-@property (nonatomic, assign) BOOL current;
+@property (nonatomic, assign, getter=isStable) BOOL stable;
+@property (nonatomic, assign, getter=isCurrent) BOOL current;
 
 @end

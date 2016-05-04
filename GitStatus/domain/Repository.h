@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSArray * branchList;
-@property (nonatomic, assign) BOOL clean;
+@property (nonatomic, assign, getter=isClean) BOOL clean;
+
+- (BOOL)isSafe;
 
 @end

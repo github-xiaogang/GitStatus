@@ -10,7 +10,6 @@
 		1F01F2ED1CD8ECDE0059E9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F2EC1CD8ECDE0059E9D2 /* AppDelegate.m */; };
 		1F01F2F01CD8ECDE0059E9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F2EF1CD8ECDE0059E9D2 /* main.m */; };
 		1F01F2F21CD8ECDE0059E9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */; };
-		1F01F2F51CD8ECDE0059E9D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F01F2F31CD8ECDE0059E9D2 /* MainMenu.xib */; };
 		1F01F2FF1CD8F53F0059E9D2 /* CmdUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F2FE1CD8F53F0059E9D2 /* CmdUtil.m */; };
 		1F01F3061CD8F6D30059E9D2 /* GitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3051CD8F6D30059E9D2 /* GitUtil.m */; };
 		1F01F3091CD8F9780059E9D2 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3081CD8F9780059E9D2 /* FileUtil.m */; };
@@ -19,6 +18,14 @@
 		1F01F3161CD9059D0059E9D2 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F3151CD9059D0059E9D2 /* Branch.m */; };
 		1F01F3181CD907990059E9D2 /* repo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F01F3171CD907990059E9D2 /* repo.plist */; };
 		1F01F31F1CD908C30059E9D2 /* RepoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F01F31E1CD908C30059E9D2 /* RepoUtil.m */; };
+		1F1F30FD1CDA206100A39FD1 /* RepoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F30FB1CDA206100A39FD1 /* RepoWindowController.m */; };
+		1F1F30FE1CDA206100A39FD1 /* RepoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F30FC1CDA206100A39FD1 /* RepoWindowController.xib */; };
+		1F1F31011CDA236C00A39FD1 /* RepoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F31001CDA236C00A39FD1 /* RepoCellView.m */; };
+		1F1F31031CDA237C00A39FD1 /* RepoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31021CDA237C00A39FD1 /* RepoCellView.xib */; };
+		1F1F31071CDA410F00A39FD1 /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F31061CDA410F00A39FD1 /* Appearance.m */; };
+		1F1F31091CDA450300A39FD1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31081CDA450300A39FD1 /* MainMenu.xib */; };
+		1F1F310D1CDA465F00A39FD1 /* RepoAddWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F310B1CDA465F00A39FD1 /* RepoAddWindowController.m */; };
+		1F1F310E1CDA465F00A39FD1 /* RepoAddWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F310C1CDA465F00A39FD1 /* RepoAddWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +34,6 @@
 		1F01F2EC1CD8ECDE0059E9D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F01F2EF1CD8ECDE0059E9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F01F2F41CD8ECDE0059E9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1F01F2F61CD8ECDE0059E9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F01F2FD1CD8F53F0059E9D2 /* CmdUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdUtil.h; sourceTree = "<group>"; };
 		1F01F2FE1CD8F53F0059E9D2 /* CmdUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmdUtil.m; sourceTree = "<group>"; };
@@ -45,6 +51,18 @@
 		1F01F3171CD907990059E9D2 /* repo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = repo.plist; sourceTree = "<group>"; };
 		1F01F31D1CD908C30059E9D2 /* RepoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoUtil.h; sourceTree = "<group>"; };
 		1F01F31E1CD908C30059E9D2 /* RepoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoUtil.m; sourceTree = "<group>"; };
+		1F1F30FA1CDA206100A39FD1 /* RepoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoWindowController.h; sourceTree = "<group>"; };
+		1F1F30FB1CDA206100A39FD1 /* RepoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoWindowController.m; sourceTree = "<group>"; };
+		1F1F30FC1CDA206100A39FD1 /* RepoWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoWindowController.xib; sourceTree = "<group>"; };
+		1F1F30FF1CDA236C00A39FD1 /* RepoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoCellView.h; sourceTree = "<group>"; };
+		1F1F31001CDA236C00A39FD1 /* RepoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoCellView.m; sourceTree = "<group>"; };
+		1F1F31021CDA237C00A39FD1 /* RepoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoCellView.xib; sourceTree = "<group>"; };
+		1F1F31051CDA410F00A39FD1 /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
+		1F1F31061CDA410F00A39FD1 /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
+		1F1F31081CDA450300A39FD1 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		1F1F310A1CDA465F00A39FD1 /* RepoAddWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoAddWindowController.h; sourceTree = "<group>"; };
+		1F1F310B1CDA465F00A39FD1 /* RepoAddWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoAddWindowController.m; sourceTree = "<group>"; };
+		1F1F310C1CDA465F00A39FD1 /* RepoAddWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoAddWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,15 +95,16 @@
 		1F01F2EA1CD8ECDE0059E9D2 /* GitStatus */ = {
 			isa = PBXGroup;
 			children = (
+				1F1F31041CDA40FA00A39FD1 /* config */,
 				1F01F30B1CD8FB790059E9D2 /* Test */,
 				1F01F2FC1CD8F50E0059E9D2 /* util */,
 				1F01F3001CD8F66F0059E9D2 /* GitUtil */,
 				1F01F3101CD905080059E9D2 /* domain */,
 				1F01F3191CD908400059E9D2 /* dao */,
+				1F1F30F91CDA1F1400A39FD1 /* controller */,
 				1F01F2EB1CD8ECDE0059E9D2 /* AppDelegate.h */,
 				1F01F2EC1CD8ECDE0059E9D2 /* AppDelegate.m */,
 				1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */,
-				1F01F2F31CD8ECDE0059E9D2 /* MainMenu.xib */,
 				1F01F2F61CD8ECDE0059E9D2 /* Info.plist */,
 				1F01F2EE1CD8ECDE0059E9D2 /* Supporting Files */,
 			);
@@ -95,6 +114,7 @@
 		1F01F2EE1CD8ECDE0059E9D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F1F31081CDA450300A39FD1 /* MainMenu.xib */,
 				1F01F2EF1CD8ECDE0059E9D2 /* main.m */,
 				1F01F30A1CD8F9D80059E9D2 /* gitstatus.pch */,
 			);
@@ -149,6 +169,31 @@
 				1F01F31E1CD908C30059E9D2 /* RepoUtil.m */,
 			);
 			path = dao;
+			sourceTree = "<group>";
+		};
+		1F1F30F91CDA1F1400A39FD1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F1F30FA1CDA206100A39FD1 /* RepoWindowController.h */,
+				1F1F30FB1CDA206100A39FD1 /* RepoWindowController.m */,
+				1F1F30FC1CDA206100A39FD1 /* RepoWindowController.xib */,
+				1F1F30FF1CDA236C00A39FD1 /* RepoCellView.h */,
+				1F1F31001CDA236C00A39FD1 /* RepoCellView.m */,
+				1F1F31021CDA237C00A39FD1 /* RepoCellView.xib */,
+				1F1F310A1CDA465F00A39FD1 /* RepoAddWindowController.h */,
+				1F1F310B1CDA465F00A39FD1 /* RepoAddWindowController.m */,
+				1F1F310C1CDA465F00A39FD1 /* RepoAddWindowController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		1F1F31041CDA40FA00A39FD1 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				1F1F31051CDA410F00A39FD1 /* Appearance.h */,
+				1F1F31061CDA410F00A39FD1 /* Appearance.m */,
+			);
+			path = config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +253,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1F31031CDA237C00A39FD1 /* RepoCellView.xib in Resources */,
+				1F1F31091CDA450300A39FD1 /* MainMenu.xib in Resources */,
+				1F1F310E1CDA465F00A39FD1 /* RepoAddWindowController.xib in Resources */,
 				1F01F2F21CD8ECDE0059E9D2 /* Assets.xcassets in Resources */,
-				1F01F2F51CD8ECDE0059E9D2 /* MainMenu.xib in Resources */,
 				1F01F3181CD907990059E9D2 /* repo.plist in Resources */,
+				1F1F30FE1CDA206100A39FD1 /* RepoWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,28 +271,21 @@
 			files = (
 				1F01F3131CD905960059E9D2 /* Repository.m in Sources */,
 				1F01F3161CD9059D0059E9D2 /* Branch.m in Sources */,
+				1F1F310D1CDA465F00A39FD1 /* RepoAddWindowController.m in Sources */,
 				1F01F31F1CD908C30059E9D2 /* RepoUtil.m in Sources */,
 				1F01F3091CD8F9780059E9D2 /* FileUtil.m in Sources */,
 				1F01F30E1CD8FB8F0059E9D2 /* TestUtil.m in Sources */,
 				1F01F2F01CD8ECDE0059E9D2 /* main.m in Sources */,
 				1F01F2FF1CD8F53F0059E9D2 /* CmdUtil.m in Sources */,
+				1F1F31071CDA410F00A39FD1 /* Appearance.m in Sources */,
+				1F1F30FD1CDA206100A39FD1 /* RepoWindowController.m in Sources */,
 				1F01F3061CD8F6D30059E9D2 /* GitUtil.m in Sources */,
 				1F01F2ED1CD8ECDE0059E9D2 /* AppDelegate.m in Sources */,
+				1F1F31011CDA236C00A39FD1 /* RepoCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		1F01F2F31CD8ECDE0059E9D2 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F01F2F41CD8ECDE0059E9D2 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1F01F2F71CD8ECDE0059E9D2 /* Debug */ = {
@@ -375,6 +416,7 @@
 				1F01F2FB1CD8ECDE0059E9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
