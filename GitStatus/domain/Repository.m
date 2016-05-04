@@ -26,5 +26,17 @@
     return result;
 }
 
+- (NSString *)currentBranch
+{
+    Branch * currentBranch = nil;
+    for (Branch * branch in self.branchList) {
+        if(branch.isCurrent){
+            currentBranch = branch;
+            break;
+        }
+    }
+    return currentBranch.name;
+}
+
 
 @end

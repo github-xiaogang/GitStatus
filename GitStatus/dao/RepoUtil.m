@@ -7,16 +7,19 @@
 //
 
 #import "RepoUtil.h"
+
+
 static NSString * const kRepoConfigFileName = @"repo.plist";
 
 static NSString * const kRepoNameKey = @"name";
 static NSString * const kRepoPathKey = @"repoPath";
 static NSString * const kRepoStableListKey = @"stableList";
 
+NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotification";
+
 @interface RepoUtil ()
 
 @property (nonatomic, strong) NSArray * repoConfigList;
-@property (nonatomic, assign) BOOL shouldConfigReload;
 
 @end
 
@@ -41,24 +44,15 @@ static NSString * const kRepoStableListKey = @"stableList";
     return self;
 }
 
-- (void)markConfigDirty
-{
-    self.shouldConfigReload = YES;
-}
-
 - (void)loadRepoConfig
 {
     NSString * repoConfigPath = [self repoConfigPath];
     NSArray * configList = [NSArray arrayWithContentsOfFile:repoConfigPath];
     self.repoConfigList = configList;
-    self.shouldConfigReload = NO;
 }
 
 - (NSArray *)repoList
 {
-    if(self.shouldConfigReload){
-        [self loadRepoConfig];
-    }
     NSMutableArray * repoList = [NSMutableArray array];
     for (NSDictionary * data in self.repoConfigList) {
         
@@ -224,15 +218,15 @@ static NSString * const kRepoStableListKey = @"stableList";
     [self updateNow];
 }
 
-
-- (void)update
-{
-    
-}
-
 - (void)updateNow
 {
     [self loadRepoConfig];
+    [self notify];
+}
+
+- (void)notify
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRepoUtilRepoUpdatedNotification object:self];
 }
 
 @end

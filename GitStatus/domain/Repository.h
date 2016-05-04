@@ -15,5 +15,6 @@
 @property (nonatomic, assign, getter=isClean) BOOL clean;
 
 - (BOOL)isSafe;
+- (NSString *)currentBranch;
 
 @end

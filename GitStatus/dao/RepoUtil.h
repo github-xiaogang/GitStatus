@@ -8,18 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const kRepoUtilRepoUpdatedNotification;
+
 @interface RepoUtil : NSObject
 
 + (RepoUtil *)sharedUtil;
 - (NSArray *)repoList;
 
-- (void)markConfigDirty;
-
 - (void)addRepoWithName: (NSString *)name andPath: (NSString *)repoPath;
 - (void)removeRepoWithName: (NSString *)name;
 - (void)addStableBranchWithRepoName: (NSString *)repoName branchName: (NSString *)branchName;
 - (void)removeStableBranchWithRepoName: (NSString *)repoName branchName: (NSString *)branchName;
-
-
 
 @end

@@ -16,6 +16,7 @@
 
 @property (weak) IBOutlet NSTextField *countTextfield;
 @property (weak) IBOutlet NSView *lineView;
+@property (weak) IBOutlet NSTextField *currentBranchTextfield;
 
 
 @end
@@ -46,6 +47,7 @@
     }else{
         self.safeStatusView.layer.backgroundColor = [Appearance sadColor].CGColor;
     }
+    self.currentBranchTextfield.stringValue = [repo currentBranch];
 }
 
 + (CGFloat)preferedHeight

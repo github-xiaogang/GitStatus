@@ -10,12 +10,14 @@
 #import "RepoCellView.h"
 #import "RepoUtil.h"
 #import "RepoAddWindowController.h"
+#import "BranchWindowController.h"
 
 @interface RepoWindowController ()<RepoCellViewDelegate>
 
 @property (weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, strong) NSArray * repoList;
 @property (nonatomic, strong) RepoAddWindowController * repoAddWC;
+@property (nonatomic, strong) BranchWindowController * branchWC;
 
 @end
 
@@ -26,6 +28,7 @@
     [self.window center];
     self.tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyleNone;
     [self reloadData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:kRepoUtilRepoUpdatedNotification object:nil];
 }
 
 #pragma mark -----------------   table view datasource & delegate   ----------------
@@ -49,6 +52,7 @@
     [cell setData: self.repoList[row]];
     return cell;
 }
+
 - (IBAction)repoAddButtonPressed:(id)sender {
     RepoAddWindowController * repoAddWC = [[RepoAddWindowController alloc] initWithWindowNibName:@"RepoAddWindowController"];
     self.repoAddWC = repoAddWC;
@@ -63,14 +67,25 @@
     }];
 }
 
+- (IBAction)refreshButtonPressed:(id)sender {
+    [self reloadData];
+}
+
+
 #pragma mark -----------------   cell delegate   ----------------
 - (void)repoCellViewSelected: (RepoCellView *)repoCellView
 {
     NSInteger row = [self.tableView rowForView:repoCellView];
+    Repository * repo = self.repoList[row];
+    BranchWindowController * branchWC = [[BranchWindowController alloc] initWithWindowNibName:@"BranchWindowController"];
+    branchWC.repo = repo;
+    self.branchWC = branchWC;
+    [self.branchWC showWindow:nil];
 }
 
 - (void)reloadData
 {
+    NSLog(@"repo updated");
     self.repoList = [[RepoUtil sharedUtil] repoList];
     [self.tableView reloadData];
 }
