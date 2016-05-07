@@ -11,6 +11,7 @@
 #import "RepoUtil.h"
 #import "RepoAddWindowController.h"
 #import "BranchWindowController.h"
+#import "StatusMonitor.h"
 
 @interface RepoWindowController ()<RepoCellViewDelegate>
 
@@ -30,6 +31,7 @@
     self.tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyleNone;
     [self reloadData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:kRepoUtilRepoUpdatedNotification object:nil];
+
 }
 
 #pragma mark -----------------   table view datasource & delegate   ----------------
