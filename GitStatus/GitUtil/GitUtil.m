@@ -80,6 +80,25 @@ static NSString * const kRepoCleanIdentityContent = @"nothing to commit, working
     return [NSArray arrayWithArray:branchList];
 }
 
+- (NSArray *)branchListAndCurrentBranch: (NSString **)branchPtr
+{
+    NSString * result = [CmdUtil runCmd:kGitCmdBranchList workPath:self.workingRepoPath];
+    NSArray * branches = [result componentsSeparatedByString:@"\n"];
+    NSMutableArray * branchList = [NSMutableArray array];
+    for (NSString * branch in branches) {
+        if(branch.length == 0) continue;
+        if([branch hasPrefix:kCurrentBranchNamePrefix]){
+            NSString * result = [branch substringFromIndex:kCurrentBranchNamePrefix.length];
+            *branchPtr = result;
+            [branchList addObject:result];
+        }else if([branch hasPrefix:kOtherBranchNamePrefix]){
+            NSString * result = [branch substringFromIndex:kOtherBranchNamePrefix.length];
+            [branchList addObject:result];
+        }
+    }
+    return [NSArray arrayWithArray:branchList];
+}
+
 - (NSString *)currentBranch
 {
     NSString * result = [CmdUtil runCmd:kGitCmdBranchList workPath:self.workingRepoPath];

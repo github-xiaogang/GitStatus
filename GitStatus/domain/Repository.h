@@ -11,6 +11,7 @@
 @interface Repository : NSObject
 
 @property (nonatomic, strong) NSString * name;
+@property (nonatomic, assign) NSTimeInterval creatTime;
 @property (nonatomic, strong) NSArray * branchList;
 @property (nonatomic, assign, getter=isClean) BOOL clean;
 

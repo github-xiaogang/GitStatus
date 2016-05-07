@@ -14,7 +14,7 @@
 
 @import Foundation;
 @import AppKit;
-
+@import CoreServices;
 
 #import "CmdUtil.h"
 #import "FileUtil.h"

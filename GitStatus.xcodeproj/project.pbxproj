@@ -30,6 +30,12 @@
 		1F1F31131CDA4CDB00A39FD1 /* BranchWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31111CDA4CDB00A39FD1 /* BranchWindowController.xib */; };
 		1F1F31161CDA4CF200A39FD1 /* BranchCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F31151CDA4CF200A39FD1 /* BranchCellView.m */; };
 		1F1F31181CDA4D0400A39FD1 /* BranchCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */; };
+		1FF9E2441CDD8274000AE44C /* StatusMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E2431CDD8274000AE44C /* StatusMonitor.m */; };
+		1FF9E2521CDD9919000AE44C /* unsafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E24E1CDD9919000AE44C /* unsafe.png */; };
+		1FF9E2531CDD9919000AE44C /* safe.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E24F1CDD9919000AE44C /* safe.png */; };
+		1FF9E2541CDD9919000AE44C /* clean.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E2501CDD9919000AE44C /* clean.png */; };
+		1FF9E2551CDD9919000AE44C /* unclean.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E2511CDD9919000AE44C /* unclean.png */; };
+		1FF9E2591CDDA5B5000AE44C /* Preference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E2581CDDA5B5000AE44C /* Preference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +79,14 @@
 		1F1F31141CDA4CF200A39FD1 /* BranchCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchCellView.h; sourceTree = "<group>"; };
 		1F1F31151CDA4CF200A39FD1 /* BranchCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchCellView.m; sourceTree = "<group>"; };
 		1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BranchCellView.xib; sourceTree = "<group>"; };
+		1FF9E2421CDD8274000AE44C /* StatusMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusMonitor.h; sourceTree = "<group>"; };
+		1FF9E2431CDD8274000AE44C /* StatusMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusMonitor.m; sourceTree = "<group>"; };
+		1FF9E24E1CDD9919000AE44C /* unsafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unsafe.png; sourceTree = "<group>"; };
+		1FF9E24F1CDD9919000AE44C /* safe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safe.png; sourceTree = "<group>"; };
+		1FF9E2501CDD9919000AE44C /* clean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clean.png; sourceTree = "<group>"; };
+		1FF9E2511CDD9919000AE44C /* unclean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unclean.png; sourceTree = "<group>"; };
+		1FF9E2571CDDA5B5000AE44C /* Preference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preference.h; sourceTree = "<group>"; };
+		1FF9E2581CDDA5B5000AE44C /* Preference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +119,8 @@
 		1F01F2EA1CD8ECDE0059E9D2 /* GitStatus */ = {
 			isa = PBXGroup;
 			children = (
+				1FF9E2561CDDA598000AE44C /* preference */,
+				1FF9E2451CDD9494000AE44C /* resource */,
 				1F1F31041CDA40FA00A39FD1 /* config */,
 				1F01F30B1CD8FB790059E9D2 /* Test */,
 				1F01F2FC1CD8F50E0059E9D2 /* util */,
@@ -112,6 +128,7 @@
 				1F01F3101CD905080059E9D2 /* domain */,
 				1F01F3191CD908400059E9D2 /* dao */,
 				1F1F30F91CDA1F1400A39FD1 /* controller */,
+				1FF9E2411CDD8196000AE44C /* routine */,
 				1F01F2EB1CD8ECDE0059E9D2 /* AppDelegate.h */,
 				1F01F2EC1CD8ECDE0059E9D2 /* AppDelegate.m */,
 				1F01F2F11CD8ECDE0059E9D2 /* Assets.xcassets */,
@@ -212,6 +229,35 @@
 			path = config;
 			sourceTree = "<group>";
 		};
+		1FF9E2411CDD8196000AE44C /* routine */ = {
+			isa = PBXGroup;
+			children = (
+				1FF9E2421CDD8274000AE44C /* StatusMonitor.h */,
+				1FF9E2431CDD8274000AE44C /* StatusMonitor.m */,
+			);
+			path = routine;
+			sourceTree = "<group>";
+		};
+		1FF9E2451CDD9494000AE44C /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				1FF9E24E1CDD9919000AE44C /* unsafe.png */,
+				1FF9E24F1CDD9919000AE44C /* safe.png */,
+				1FF9E2501CDD9919000AE44C /* clean.png */,
+				1FF9E2511CDD9919000AE44C /* unclean.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		1FF9E2561CDDA598000AE44C /* preference */ = {
+			isa = PBXGroup;
+			children = (
+				1FF9E2571CDDA5B5000AE44C /* Preference.h */,
+				1FF9E2581CDDA5B5000AE44C /* Preference.m */,
+			);
+			path = preference;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,10 +318,14 @@
 				1F1F31031CDA237C00A39FD1 /* RepoCellView.xib in Resources */,
 				1F1F31091CDA450300A39FD1 /* MainMenu.xib in Resources */,
 				1F1F310E1CDA465F00A39FD1 /* RepoAddWindowController.xib in Resources */,
+				1FF9E2541CDD9919000AE44C /* clean.png in Resources */,
+				1FF9E2551CDD9919000AE44C /* unclean.png in Resources */,
 				1F01F2F21CD8ECDE0059E9D2 /* Assets.xcassets in Resources */,
 				1F1F31181CDA4D0400A39FD1 /* BranchCellView.xib in Resources */,
 				1F01F3181CD907990059E9D2 /* repo.plist in Resources */,
+				1FF9E2531CDD9919000AE44C /* safe.png in Resources */,
 				1F1F30FE1CDA206100A39FD1 /* RepoWindowController.xib in Resources */,
+				1FF9E2521CDD9919000AE44C /* unsafe.png in Resources */,
 				1F1F31131CDA4CDB00A39FD1 /* BranchWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +343,7 @@
 				1F1F310D1CDA465F00A39FD1 /* RepoAddWindowController.m in Sources */,
 				1F01F31F1CD908C30059E9D2 /* RepoUtil.m in Sources */,
 				1F01F3091CD8F9780059E9D2 /* FileUtil.m in Sources */,
+				1FF9E2441CDD8274000AE44C /* StatusMonitor.m in Sources */,
 				1F01F30E1CD8FB8F0059E9D2 /* TestUtil.m in Sources */,
 				1F01F2F01CD8ECDE0059E9D2 /* main.m in Sources */,
 				1F01F2FF1CD8F53F0059E9D2 /* CmdUtil.m in Sources */,
@@ -302,6 +353,7 @@
 				1F01F3061CD8F6D30059E9D2 /* GitUtil.m in Sources */,
 				1F01F2ED1CD8ECDE0059E9D2 /* AppDelegate.m in Sources */,
 				1F1F31011CDA236C00A39FD1 /* RepoCellView.m in Sources */,
+				1FF9E2591CDDA5B5000AE44C /* Preference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

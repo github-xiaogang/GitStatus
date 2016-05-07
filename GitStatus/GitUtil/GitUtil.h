@@ -20,6 +20,7 @@
 
 
 - (NSArray *)branchList;
+- (NSArray *)branchListAndCurrentBranch: (NSString **)branchPtr;
 - (NSString *)currentBranch;
 - (BOOL)isRepoClean;
 

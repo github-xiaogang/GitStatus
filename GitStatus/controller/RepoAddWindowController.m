@@ -21,9 +21,8 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    
+    self.window.title = @"Add Repo";
 }
-
 
 - (IBAction)cancelButtonPressed:(id)sender {
     if(self.cancelBlock){

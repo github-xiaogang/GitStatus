@@ -14,9 +14,10 @@
 @property (weak) IBOutlet NSView *cleanStatusView;
 @property (weak) IBOutlet NSView *safeStatusView;
 
-@property (weak) IBOutlet NSTextField *countTextfield;
 @property (weak) IBOutlet NSView *lineView;
 @property (weak) IBOutlet NSTextField *currentBranchTextfield;
+
+@property (weak) IBOutlet NSButton *countButton;
 
 
 @end
@@ -28,13 +29,15 @@
     [super awakeFromNib];
     self.wantsLayer = YES;
     self.lineView.layer.backgroundColor = [[NSColor lightGrayColor] CGColor];
+    self.cleanStatusView.layer.cornerRadius = self.cleanStatusView.frame.size.width/2;
+    self.safeStatusView.layer.cornerRadius = self.safeStatusView.frame.size.width/2;
 }
 
 - (void)setData: (id)data
 {
     Repository * repo = (Repository *)data;
     self.nameTextfield.stringValue = repo.name;
-    self.countTextfield.stringValue = [NSString stringWithFormat:@"%ld branches",repo.branchList.count];
+    self.countButton.title = [NSString stringWithFormat:@"%ld branches",repo.branchList.count];
     BOOL isClean = [repo isClean];
     BOOL isSafe = [repo isSafe];
     if(isClean){
@@ -77,6 +80,11 @@
     }
 }
 
+- (IBAction)branchButtonPressed:(id)sender {
+    if(self.delegate && [self.delegate respondsToSelector:@selector(repoCellBranchSelected:)]){
+        [self.delegate repoCellBranchSelected:self];
+    }
+}
 
 @end
 

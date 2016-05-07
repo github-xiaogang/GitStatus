@@ -8,16 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef void(^RepoLoadCallback)(NSArray * repoList);
+
 extern NSString * const kRepoUtilRepoUpdatedNotification;
 
 @interface RepoUtil : NSObject
 
 + (RepoUtil *)sharedUtil;
-- (NSArray *)repoList;
+//异步获取
+- (void)asyncLoadRepoList: (RepoLoadCallback)callback;
 
 - (void)addRepoWithName: (NSString *)name andPath: (NSString *)repoPath;
 - (void)removeRepoWithName: (NSString *)name;
 - (void)addStableBranchWithRepoName: (NSString *)repoName branchName: (NSString *)branchName;
 - (void)removeStableBranchWithRepoName: (NSString *)repoName branchName: (NSString *)branchName;
+
+//debug 同步获取
+- (NSArray *)repoList;
 
 @end

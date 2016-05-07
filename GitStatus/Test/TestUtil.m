@@ -34,12 +34,6 @@
     NSLog(@"%@",branchList);
 }
 
-+ (void)testCurrentBranch
-{
-    NSString * currentBranch = [[GitUtil sharedUtil] currentBranch];
-    NSLog(@"current :%@",currentBranch);
-}
-
 + (void)testRepoClean
 {
     BOOL result = [[GitUtil sharedUtil] isRepoClean];

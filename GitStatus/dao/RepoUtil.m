@@ -12,6 +12,7 @@
 static NSString * const kRepoConfigFileName = @"repo.plist";
 
 static NSString * const kRepoNameKey = @"name";
+static NSString * const kRepoCreateTimeKey = @"createTime";
 static NSString * const kRepoPathKey = @"repoPath";
 static NSString * const kRepoStableListKey = @"stableList";
 
@@ -51,23 +52,33 @@ NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotifi
     self.repoConfigList = configList;
 }
 
+- (void)asyncLoadRepoList: (RepoLoadCallback)callback
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray * repoList = [self repoList];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            callback(repoList);
+        });
+    });
+}
+
 - (NSArray *)repoList
 {
     NSMutableArray * repoList = [NSMutableArray array];
     for (NSDictionary * data in self.repoConfigList) {
-        
-        NSString * name = data[@"name"];
+        NSString * name = data[kRepoNameKey];
+        NSTimeInterval creatTime = [data[kRepoCreateTimeKey] doubleValue];
         NSString * repoPath = data[kRepoPathKey];
         NSArray * stableList = data[kRepoStableListKey];
-        //
         GitUtil * gitUtil = [GitUtil sharedUtil];
         if(![gitUtil setCurrentRepo:repoPath]) continue;
-        NSArray * branches = [gitUtil branchList];
-        NSString * currentBranch = [gitUtil currentBranch];
+        NSString * currentBranch = nil;
+        NSArray * branches = [gitUtil branchListAndCurrentBranch:&currentBranch];
         BOOL isRepoClean = [gitUtil isRepoClean];
         
         Repository * repo = [[Repository alloc] init];
         repo.name = name;
+        repo.creatTime = creatTime;
         repo.clean = isRepoClean;
         NSMutableArray * branchList = [NSMutableArray array];
         for (NSString * branchName in branches) {
@@ -88,7 +99,12 @@ NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotifi
         repo.branchList = branchList;
         [repoList addObject:repo];
     }
-    return repoList;
+    NSArray * sortedRepoList = [repoList sortedArrayUsingComparator:^NSComparisonResult(Repository * repo1, Repository * repo2) {
+        if(repo1.creatTime > repo2.creatTime) return NSOrderedAscending;
+        if(repo1.creatTime < repo2.creatTime) return NSOrderedDescending;
+        return NSOrderedSame;
+    }];
+    return sortedRepoList;
 }
 
 - (NSString *)repoConfigPath
@@ -123,6 +139,7 @@ NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotifi
     }
     NSMutableDictionary * config = [NSMutableDictionary dictionary];
     config[kRepoNameKey] = repoName;
+    config[kRepoCreateTimeKey] = [NSString stringWithFormat:@"%.f",[[NSDate date] timeIntervalSince1970]];
     config[kRepoPathKey] = repoPath;
     config[kRepoStableListKey] = @[];
     [configList addObject:config];

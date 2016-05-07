@@ -22,5 +22,6 @@
 @protocol RepoCellViewDelegate <NSObject>
 
 - (void)repoCellViewSelected: (RepoCellView *)repoCellView;
+- (void)repoCellBranchSelected: (RepoCellView *)repoCellView;
 
 @end

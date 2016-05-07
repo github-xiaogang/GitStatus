@@ -25,6 +25,7 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    self.window.title = @"Git Status";
     [self.window center];
     self.tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyleNone;
     [self reloadData];
@@ -75,6 +76,11 @@
 #pragma mark -----------------   cell delegate   ----------------
 - (void)repoCellViewSelected: (RepoCellView *)repoCellView
 {
+    [[NSWorkspace sharedWorkspace] launchApplication:@"SourceTree.app"];
+}
+
+- (void)repoCellBranchSelected:(RepoCellView *)repoCellView
+{
     NSInteger row = [self.tableView rowForView:repoCellView];
     Repository * repo = self.repoList[row];
     BranchWindowController * branchWC = [[BranchWindowController alloc] initWithWindowNibName:@"BranchWindowController"];
@@ -85,9 +91,10 @@
 
 - (void)reloadData
 {
-    NSLog(@"repo updated");
-    self.repoList = [[RepoUtil sharedUtil] repoList];
-    [self.tableView reloadData];
+    [[RepoUtil sharedUtil] asyncLoadRepoList:^(NSArray *repoList) {
+        self.repoList = repoList;
+        [self.tableView reloadData];
+    }];
 }
 
 @end

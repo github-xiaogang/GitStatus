@@ -21,15 +21,6 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kV5-yP-lCZ">
-                    <rect key="frame" x="236" y="38" width="89" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="3 branches" id="OdK-EB-Uq6">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="qEd-6i-EJ1">
                     <rect key="frame" x="5" y="10" width="41" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -61,7 +52,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                 </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="avC-yv-8Sh">
-                    <rect key="frame" x="159" y="9" width="166" height="17"/>
+                    <rect key="frame" x="159" y="38" width="166" height="17"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="dev" id="mKR-1o-iry">
                         <font key="font" metaFont="system"/>
@@ -80,10 +71,21 @@
                         <action selector="contentButtonPressed:" target="c22-O7-iKe" id="Hqe-tq-jPL"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" id="Kap-J0-dOr">
+                    <rect key="frame" x="247" y="9" width="76" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="inline" title="3 branches" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="MJE-fB-IKB">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystemBold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="branchButtonPressed:" target="c22-O7-iKe" id="GRG-3R-pyV"/>
+                    </connections>
+                </button>
             </subviews>
             <connections>
                 <outlet property="cleanStatusView" destination="ExB-5g-Xnj" id="ctg-Ww-ZJJ"/>
-                <outlet property="countTextfield" destination="kV5-yP-lCZ" id="EOu-hp-WGm"/>
+                <outlet property="countButton" destination="Kap-J0-dOr" id="yQr-99-Fzc"/>
                 <outlet property="currentBranchTextfield" destination="avC-yv-8Sh" id="EuR-tq-he8"/>
                 <outlet property="lineView" destination="mdC-Fw-NVi" id="ll1-Vg-FIe"/>
                 <outlet property="nameTextfield" destination="xlf-Pv-qY2" id="xm4-ns-pZa"/>

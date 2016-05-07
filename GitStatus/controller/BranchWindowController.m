@@ -22,6 +22,7 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    self.window.title = [NSString stringWithFormat:@"%@",self.repo.name];
     [self.window center];
     self.tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyleNone;
     self.branchList = self.repo.branchList;
@@ -68,6 +69,19 @@
     }
 }
 
+- (IBAction)delRepoButtonPressed:(id)sender {
+    NSAlert * alert = [[NSAlert alloc] init];
+    alert.messageText = [NSString stringWithFormat:@"Are you sure to delete repo : %@",self.repo.name];
+    [alert addButtonWithTitle:@"Delete"];
+    [alert addButtonWithTitle:@"Cancel"];
+    NSInteger ret = [alert runModal];
+    if(ret == NSAlertFirstButtonReturn){
+        RepoUtil * repoUtil = [RepoUtil sharedUtil];
+        NSString * repoName = self.repo.name;
+        [repoUtil removeRepoWithName:repoName];
+        [self.window close];
+    }
+}
 
 
 
