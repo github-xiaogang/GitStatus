@@ -13,4 +13,6 @@
 + (NSColor *)niceColor;
 + (NSColor *)sadColor;
 
++ (NSColor *)keyColor;
+
 @end

@@ -18,6 +18,8 @@ static NSTimeInterval const AUTO_UPDATE_INTERVAL = 3.0f;
 
 @property (nonatomic, assign, readwrite) BOOL isClean;
 @property (nonatomic, assign, readwrite) BOOL isSafe;
+@property (nonatomic, strong, readwrite) NSArray * uncleanList;
+@property (nonatomic, strong, readwrite) NSArray * unsafeList;
 
 @property (nonatomic, strong) NSArray * repoList;
 @property (nonatomic, assign, getter=isUpdating) BOOL updating;
@@ -73,20 +75,22 @@ static NSTimeInterval const AUTO_UPDATE_INTERVAL = 3.0f;
 {
     BOOL isClean = YES;
     BOOL isSafe = YES;
-    
+    NSMutableArray * uncleanList = [NSMutableArray array];
+    NSMutableArray * unsafeList = [NSMutableArray array];
     for (Repository * repo in self.repoList) {
-        if(isClean && ![repo isClean]){
+        if(![repo isClean]){
             isClean = NO;
+            [uncleanList addObject:repo];
         }
-        if(isSafe && ![repo isSafe]){
+        if(![repo isSafe]){
             isSafe = NO;
-        }
-        if(!isClean && !isSafe){
-            break;
+            [unsafeList addObject:repo];
         }
     }
     self.isClean = isClean;
+    self.uncleanList = uncleanList;
     self.isSafe = isSafe;
+    self.unsafeList = unsafeList;
     [[NSNotificationCenter defaultCenter] postNotificationName:kStatusMonitorRepoUpdatedNotification object:self];
 }
 

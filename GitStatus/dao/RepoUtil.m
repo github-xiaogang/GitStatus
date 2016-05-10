@@ -18,6 +18,8 @@ static NSString * const kRepoStableListKey = @"stableList";
 
 NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotification";
 
+static NSString * const kRepoMasterBranchName = @"master";
+
 @interface RepoUtil ()
 
 @property (nonatomic, strong) NSArray * repoConfigList;
@@ -141,7 +143,8 @@ NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotifi
     config[kRepoNameKey] = repoName;
     config[kRepoCreateTimeKey] = [NSString stringWithFormat:@"%.f",[[NSDate date] timeIntervalSince1970]];
     config[kRepoPathKey] = repoPath;
-    config[kRepoStableListKey] = @[];
+    NSArray * defaultStableList = @[kRepoMasterBranchName];
+    config[kRepoStableListKey] = defaultStableList;
     [configList addObject:config];
     //write
     [configList writeToFile:[self repoConfigPath] atomically:NO];
@@ -184,7 +187,8 @@ NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotifi
     }
     if(targetRepo){
         NSMutableDictionary * mutableRepoConfig = [NSMutableDictionary dictionary];
-        mutableRepoConfig[kRepoNameKey] = targetRepo[@"name"];
+        mutableRepoConfig[kRepoNameKey] = targetRepo[kRepoNameKey];
+        mutableRepoConfig[kRepoCreateTimeKey] = targetRepo[kRepoCreateTimeKey];
         mutableRepoConfig[kRepoPathKey] = targetRepo[kRepoPathKey];
         NSArray * stableList = targetRepo[kRepoStableListKey];
         NSMutableArray * mutableStableList = [NSMutableArray array];
@@ -219,12 +223,13 @@ NSString * const kRepoUtilRepoUpdatedNotification = @"kRepoUtilRepoUpdatedNotifi
     if(targetRepo){
         NSMutableDictionary * mutableRepoConfig = [NSMutableDictionary dictionary];
         mutableRepoConfig[kRepoNameKey] = targetRepo[kRepoNameKey];
+        mutableRepoConfig[kRepoCreateTimeKey] = targetRepo[kRepoCreateTimeKey];
         mutableRepoConfig[kRepoPathKey] = targetRepo[kRepoPathKey];
         NSArray * stableList = targetRepo[kRepoStableListKey];
         NSMutableArray * mutableStableList = [NSMutableArray array];
         for (NSString * stableBranchName in stableList) {
             if(![stableBranchName isEqualToString:branchName]){
-                [mutableStableList addObject:branchName];
+                [mutableStableList addObject:stableBranchName];
             }
         }
         mutableRepoConfig[kRepoStableListKey] = mutableStableList;

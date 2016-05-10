@@ -62,13 +62,39 @@
     NSButton * safeButton = self.safeItem.button;
     if(isClean){
         [cleanButton setImage:[NSImage imageNamed:@"clean"]];
+        [cleanButton setToolTip:nil];
     }else{
         [cleanButton setImage:[NSImage imageNamed:@"unclean"]];
+        NSMutableString * tip = [NSMutableString string];
+        NSArray * uncleanList = self.repoMonitor.uncleanList;
+        for (int i=0;i<uncleanList.count;i++) {
+            Repository * repo = uncleanList[i];
+            if(i != uncleanList.count-1){
+                [tip appendFormat:@"%@,",repo.name];
+            }else{
+                [tip appendFormat:@"%@ ",repo.name];
+            }
+        }
+        [tip appendString:@"unclean"];
+        [cleanButton setToolTip:tip];
     }
     if(isSafe){
         [safeButton setImage:[NSImage imageNamed:@"safe"]];
+        [safeButton setToolTip:nil];
     }else{
         [safeButton setImage:[NSImage imageNamed:@"unsafe"]];
+        NSMutableString * tip = [NSMutableString string];
+        NSArray * unsafeList = self.repoMonitor.unsafeList;
+        for (int i=0;i<unsafeList.count;i++) {
+            Repository * repo = unsafeList[i];
+            if(i != unsafeList.count-1){
+                [tip appendFormat:@"%@,",repo.name];
+            }else{
+                [tip appendFormat:@"%@ ",repo.name];
+            }
+        }
+        [tip appendString:@"unsafe"];
+        [safeButton setToolTip:tip];
     }
 }
 

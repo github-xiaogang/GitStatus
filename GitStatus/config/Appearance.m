@@ -20,4 +20,10 @@
     return [NSColor redColor];
 }
 
++ (NSColor *)keyColor
+{
+    return [NSColor redColor];
+}
+
+
 @end

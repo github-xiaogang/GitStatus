@@ -34,6 +34,7 @@
     self.nameTextfield.stringValue = [NSString stringWithFormat:@"%@%@", isCurrent ? @"* ":@"  ",name];
     BOOL isStable = [branch isStable];
     self.stableCheckButton.state = isStable ? 1:0;
+    self.nameTextfield.textColor = isStable ? [Appearance keyColor] : [NSColor blackColor];
 }
 
 + (CGFloat)preferedHeight

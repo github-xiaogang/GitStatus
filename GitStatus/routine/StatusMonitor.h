@@ -17,5 +17,7 @@ static NSString * const kStatusMonitorRepoUpdatedNotification;
 
 @property (nonatomic, assign, readonly) BOOL isClean;
 @property (nonatomic, assign, readonly) BOOL isSafe;
+@property (nonatomic, strong, readonly) NSArray * uncleanList;
+@property (nonatomic, strong, readonly) NSArray * unsafeList;
 
 @end
