@@ -16,9 +16,7 @@
 
 @property (weak) IBOutlet NSWindow *window;
 @property (nonatomic, strong) RepoWindowController * repoWC;
-@property (nonatomic, strong) NSStatusItem * cleanItem;
-@property (nonatomic, strong) NSStatusItem * safeItem;
-
+@property (nonatomic, strong) NSStatusItem * statusItem;
 @property (nonatomic, strong) StatusMonitor * repoMonitor;
 
 @end
@@ -37,16 +35,11 @@
 - (void)setupStatusMenu
 {
     NSStatusBar * statusBar = [NSStatusBar systemStatusBar];
-    NSStatusItem * cleanItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
-    NSButton * cleanButton = cleanItem.button;
-    [cleanButton setTarget:self];
-    [cleanButton setAction:@selector(cleanItemClicked:)];
-    NSStatusItem * safeItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
-    NSButton * safeButton = safeItem.button;
-    [safeButton setTarget:self];
-    [safeButton setAction:@selector(safeItemClicked:)];
-    self.cleanItem = cleanItem;
-    self.safeItem = safeItem;
+    NSStatusItem * statusItem = [statusBar statusItemWithLength:44.0f];
+    NSButton * statusButton = statusItem.button;
+    [statusButton setTarget:self];
+    [statusButton setAction:@selector(cleanItemClicked:)];
+    self.statusItem = statusItem;
 }
 
 - (void)doRepoStatusUpdated
@@ -56,33 +49,11 @@
 
 - (void)updateRepoStatusUI
 {
-    BOOL isClean = self.repoMonitor.isClean;
     BOOL isSafe = self.repoMonitor.isSafe;
-    NSButton * cleanButton = self.cleanItem.button;
-    NSButton * safeButton = self.safeItem.button;
-    if(isClean){
-        [cleanButton setImage:[NSImage imageNamed:@"clean"]];
-        [cleanButton setToolTip:nil];
-    }else{
-        [cleanButton setImage:[NSImage imageNamed:@"unclean"]];
-        NSMutableString * tip = [NSMutableString string];
-        NSArray * uncleanList = self.repoMonitor.uncleanList;
-        for (int i=0;i<uncleanList.count;i++) {
-            Repository * repo = uncleanList[i];
-            if(i != uncleanList.count-1){
-                [tip appendFormat:@"%@,",repo.name];
-            }else{
-                [tip appendFormat:@"%@ ",repo.name];
-            }
-        }
-        [tip appendString:@"unclean"];
-        [cleanButton setToolTip:tip];
-    }
-    if(isSafe){
-        [safeButton setImage:[NSImage imageNamed:@"safe"]];
-        [safeButton setToolTip:nil];
-    }else{
-        [safeButton setImage:[NSImage imageNamed:@"unsafe"]];
+    BOOL isClean = self.repoMonitor.isClean;
+    NSString * statusTip = @"";
+    NSButton * statusButton = self.statusItem.button;
+    if(!isSafe){
         NSMutableString * tip = [NSMutableString string];
         NSArray * unsafeList = self.repoMonitor.unsafeList;
         for (int i=0;i<unsafeList.count;i++) {
@@ -94,8 +65,31 @@
             }
         }
         [tip appendString:@"unsafe"];
-        [safeButton setToolTip:tip];
+        statusTip = [NSString stringWithFormat:@"%@%@",statusTip,tip];
     }
+    if(!isClean){
+        NSMutableString * tip = [NSMutableString string];
+        NSArray * uncleanList = self.repoMonitor.uncleanList;
+        for (int i=0;i<uncleanList.count;i++) {
+            Repository * repo = uncleanList[i];
+            if(i != uncleanList.count-1){
+                [tip appendFormat:@"%@,",repo.name];
+            }else{
+                [tip appendFormat:@"%@ ",repo.name];
+            }
+        }
+        [tip appendString:@"unclean"];
+        if(statusTip.length > 0){
+            statusTip = [NSString stringWithFormat:@"%@\n",statusTip];
+        }
+        statusTip = [NSString stringWithFormat:@"%@%@",statusTip,tip];
+    }
+    [statusButton setToolTip:statusTip];
+    NSString * statusIcon = nil;
+    NSString * safe = isSafe ? @"safe" : @"unsafe";
+    NSString * clean = isClean ? @"clean" : @"unclean";
+    statusIcon = [NSString stringWithFormat:@"%@_%@",safe,clean];
+    [statusButton setImage:[NSImage imageNamed:statusIcon]];
 }
 
 - (void)doMainRoutine

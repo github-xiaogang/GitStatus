@@ -31,11 +31,11 @@
 		1F1F31161CDA4CF200A39FD1 /* BranchCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F31151CDA4CF200A39FD1 /* BranchCellView.m */; };
 		1F1F31181CDA4D0400A39FD1 /* BranchCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */; };
 		1FF9E2441CDD8274000AE44C /* StatusMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E2431CDD8274000AE44C /* StatusMonitor.m */; };
-		1FF9E2521CDD9919000AE44C /* unsafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E24E1CDD9919000AE44C /* unsafe.png */; };
-		1FF9E2531CDD9919000AE44C /* safe.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E24F1CDD9919000AE44C /* safe.png */; };
-		1FF9E2541CDD9919000AE44C /* clean.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E2501CDD9919000AE44C /* clean.png */; };
-		1FF9E2551CDD9919000AE44C /* unclean.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9E2511CDD9919000AE44C /* unclean.png */; };
 		1FF9E2591CDDA5B5000AE44C /* Preference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E2581CDDA5B5000AE44C /* Preference.m */; };
+		1FFED1971CE23404006A81A6 /* unsafe_clean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFED1931CE23404006A81A6 /* unsafe_clean@2x.png */; };
+		1FFED1981CE23404006A81A6 /* unsafe_unclean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFED1941CE23404006A81A6 /* unsafe_unclean@2x.png */; };
+		1FFED1991CE23404006A81A6 /* safe_clean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFED1951CE23404006A81A6 /* safe_clean@2x.png */; };
+		1FFED19A1CE23404006A81A6 /* safe_unclean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFED1961CE23404006A81A6 /* safe_unclean@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,12 +81,12 @@
 		1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BranchCellView.xib; sourceTree = "<group>"; };
 		1FF9E2421CDD8274000AE44C /* StatusMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusMonitor.h; sourceTree = "<group>"; };
 		1FF9E2431CDD8274000AE44C /* StatusMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusMonitor.m; sourceTree = "<group>"; };
-		1FF9E24E1CDD9919000AE44C /* unsafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unsafe.png; sourceTree = "<group>"; };
-		1FF9E24F1CDD9919000AE44C /* safe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safe.png; sourceTree = "<group>"; };
-		1FF9E2501CDD9919000AE44C /* clean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clean.png; sourceTree = "<group>"; };
-		1FF9E2511CDD9919000AE44C /* unclean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unclean.png; sourceTree = "<group>"; };
 		1FF9E2571CDDA5B5000AE44C /* Preference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preference.h; sourceTree = "<group>"; };
 		1FF9E2581CDDA5B5000AE44C /* Preference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preference.m; sourceTree = "<group>"; };
+		1FFED1931CE23404006A81A6 /* unsafe_clean@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unsafe_clean@2x.png"; sourceTree = "<group>"; };
+		1FFED1941CE23404006A81A6 /* unsafe_unclean@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unsafe_unclean@2x.png"; sourceTree = "<group>"; };
+		1FFED1951CE23404006A81A6 /* safe_clean@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safe_clean@2x.png"; sourceTree = "<group>"; };
+		1FFED1961CE23404006A81A6 /* safe_unclean@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safe_unclean@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,10 +241,10 @@
 		1FF9E2451CDD9494000AE44C /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				1FF9E24E1CDD9919000AE44C /* unsafe.png */,
-				1FF9E24F1CDD9919000AE44C /* safe.png */,
-				1FF9E2501CDD9919000AE44C /* clean.png */,
-				1FF9E2511CDD9919000AE44C /* unclean.png */,
+				1FFED1931CE23404006A81A6 /* unsafe_clean@2x.png */,
+				1FFED1941CE23404006A81A6 /* unsafe_unclean@2x.png */,
+				1FFED1951CE23404006A81A6 /* safe_clean@2x.png */,
+				1FFED1961CE23404006A81A6 /* safe_unclean@2x.png */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -316,16 +316,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1F31031CDA237C00A39FD1 /* RepoCellView.xib in Resources */,
+				1FFED1991CE23404006A81A6 /* safe_clean@2x.png in Resources */,
+				1FFED1971CE23404006A81A6 /* unsafe_clean@2x.png in Resources */,
 				1F1F31091CDA450300A39FD1 /* MainMenu.xib in Resources */,
 				1F1F310E1CDA465F00A39FD1 /* RepoAddWindowController.xib in Resources */,
-				1FF9E2541CDD9919000AE44C /* clean.png in Resources */,
-				1FF9E2551CDD9919000AE44C /* unclean.png in Resources */,
 				1F01F2F21CD8ECDE0059E9D2 /* Assets.xcassets in Resources */,
 				1F1F31181CDA4D0400A39FD1 /* BranchCellView.xib in Resources */,
 				1F01F3181CD907990059E9D2 /* repo.plist in Resources */,
-				1FF9E2531CDD9919000AE44C /* safe.png in Resources */,
+				1FFED19A1CE23404006A81A6 /* safe_unclean@2x.png in Resources */,
+				1FFED1981CE23404006A81A6 /* unsafe_unclean@2x.png in Resources */,
 				1F1F30FE1CDA206100A39FD1 /* RepoWindowController.xib in Resources */,
-				1FF9E2521CDD9919000AE44C /* unsafe.png in Resources */,
 				1F1F31131CDA4CDB00A39FD1 /* BranchWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
