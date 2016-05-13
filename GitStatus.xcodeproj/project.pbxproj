@@ -30,6 +30,8 @@
 		1F1F31131CDA4CDB00A39FD1 /* BranchWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31111CDA4CDB00A39FD1 /* BranchWindowController.xib */; };
 		1F1F31161CDA4CF200A39FD1 /* BranchCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1F31151CDA4CF200A39FD1 /* BranchCellView.m */; };
 		1F1F31181CDA4D0400A39FD1 /* BranchCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */; };
+		1FB899DD1CE5BBB800E7936B /* PreferenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB899DB1CE5BBB800E7936B /* PreferenceWindowController.m */; };
+		1FB899DE1CE5BBB800E7936B /* PreferenceWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB899DC1CE5BBB800E7936B /* PreferenceWindowController.xib */; };
 		1FF9E2441CDD8274000AE44C /* StatusMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E2431CDD8274000AE44C /* StatusMonitor.m */; };
 		1FF9E2591CDDA5B5000AE44C /* Preference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9E2581CDDA5B5000AE44C /* Preference.m */; };
 		1FFED1971CE23404006A81A6 /* unsafe_clean@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFED1931CE23404006A81A6 /* unsafe_clean@2x.png */; };
@@ -79,6 +81,9 @@
 		1F1F31141CDA4CF200A39FD1 /* BranchCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchCellView.h; sourceTree = "<group>"; };
 		1F1F31151CDA4CF200A39FD1 /* BranchCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchCellView.m; sourceTree = "<group>"; };
 		1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BranchCellView.xib; sourceTree = "<group>"; };
+		1FB899DA1CE5BBB800E7936B /* PreferenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceWindowController.h; sourceTree = "<group>"; };
+		1FB899DB1CE5BBB800E7936B /* PreferenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceWindowController.m; sourceTree = "<group>"; };
+		1FB899DC1CE5BBB800E7936B /* PreferenceWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferenceWindowController.xib; sourceTree = "<group>"; };
 		1FF9E2421CDD8274000AE44C /* StatusMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusMonitor.h; sourceTree = "<group>"; };
 		1FF9E2431CDD8274000AE44C /* StatusMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusMonitor.m; sourceTree = "<group>"; };
 		1FF9E2571CDDA5B5000AE44C /* Preference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preference.h; sourceTree = "<group>"; };
@@ -216,6 +221,9 @@
 				1F1F31141CDA4CF200A39FD1 /* BranchCellView.h */,
 				1F1F31151CDA4CF200A39FD1 /* BranchCellView.m */,
 				1F1F31171CDA4D0400A39FD1 /* BranchCellView.xib */,
+				1FB899DA1CE5BBB800E7936B /* PreferenceWindowController.h */,
+				1FB899DB1CE5BBB800E7936B /* PreferenceWindowController.m */,
+				1FB899DC1CE5BBB800E7936B /* PreferenceWindowController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				1F1F31181CDA4D0400A39FD1 /* BranchCellView.xib in Resources */,
 				1F01F3181CD907990059E9D2 /* repo.plist in Resources */,
 				1FFED19A1CE23404006A81A6 /* safe_unclean@2x.png in Resources */,
+				1FB899DE1CE5BBB800E7936B /* PreferenceWindowController.xib in Resources */,
 				1FFED1981CE23404006A81A6 /* unsafe_unclean@2x.png in Resources */,
 				1F1F30FE1CDA206100A39FD1 /* RepoWindowController.xib in Resources */,
 				1F1F31131CDA4CDB00A39FD1 /* BranchWindowController.xib in Resources */,
@@ -353,6 +362,7 @@
 				1F01F3061CD8F6D30059E9D2 /* GitUtil.m in Sources */,
 				1F01F2ED1CD8ECDE0059E9D2 /* AppDelegate.m in Sources */,
 				1F1F31011CDA236C00A39FD1 /* RepoCellView.m in Sources */,
+				1FB899DD1CE5BBB800E7936B /* PreferenceWindowController.m in Sources */,
 				1FF9E2591CDDA5B5000AE44C /* Preference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
