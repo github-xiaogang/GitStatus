@@ -22,6 +22,6 @@
 
 
 
-  [1]: https://github.com/github-xiaogang/GitStatus/readme/menubar
-  [2]: https://github.com/github-xiaogang/GitStatus/readme/repo
-  [3]: https://github.com/github-xiaogang/GitStatus/readme/stable
+  [1]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/menubar
+  [2]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/repo
+  [3]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/stable
