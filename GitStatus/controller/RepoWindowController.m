@@ -12,6 +12,7 @@
 #import "RepoAddWindowController.h"
 #import "BranchWindowController.h"
 #import "StatusMonitor.h"
+#import "Preference.h"
 
 @interface RepoWindowController ()<RepoCellViewDelegate>
 
@@ -31,7 +32,11 @@
     self.tableView.selectionHighlightStyle = NSTableViewSelectionHighlightStyleNone;
     [self reloadData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:kRepoUtilRepoUpdatedNotification object:nil];
+}
 
+- (void)update
+{
+    [self reloadData];
 }
 
 #pragma mark -----------------   table view datasource & delegate   ----------------
@@ -78,7 +83,10 @@
 #pragma mark -----------------   cell delegate   ----------------
 - (void)repoCellViewSelected: (RepoCellView *)repoCellView
 {
-    [[NSWorkspace sharedWorkspace] launchApplication:@"SourceTree.app"];
+    NSString * gitClient = [Preference gitClient];
+    if(gitClient.length > 0){
+        [[NSWorkspace sharedWorkspace] launchApplication:gitClient];
+    }
 }
 
 - (void)repoCellBranchSelected:(RepoCellView *)repoCellView

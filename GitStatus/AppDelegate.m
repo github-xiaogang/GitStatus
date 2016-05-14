@@ -11,11 +11,13 @@
 #import "RepoWindowController.h"
 #import "StatusMonitor.h"
 #import "Preference.h"
+#import "PreferenceWindowController.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
 @property (nonatomic, strong) RepoWindowController * repoWC;
+@property (nonatomic, strong) PreferenceWindowController * preferenceWC;
 @property (nonatomic, strong) NSStatusItem * statusItem;
 @property (nonatomic, strong) StatusMonitor * repoMonitor;
 
@@ -94,11 +96,15 @@
 
 - (void)doMainRoutine
 {
-    RepoWindowController * repoWC = [[RepoWindowController alloc] initWithWindowNibName:@"RepoWindowController"];
-    self.repoWC = repoWC;
-    [repoWC showWindow:nil];
-    [repoWC.window makeMainWindow];
-    [repoWC.window orderFrontRegardless];
+    if(!self.repoWC){
+        RepoWindowController * repoWC = [[RepoWindowController alloc] initWithWindowNibName:@"RepoWindowController"];
+        self.repoWC = repoWC;
+    }else{
+        [self.repoWC update];
+    }
+    [self.repoWC showWindow:nil];
+    [self.repoWC.window makeMainWindow];
+    [self.repoWC.window orderFrontRegardless];
 }
 
 - (void)cleanItemClicked: (NSButton *)button
@@ -111,6 +117,13 @@
     [self doMainRoutine];
 }
 
+- (IBAction)preferenceMenuPressed:(id)sender {
+    PreferenceWindowController * preferenceWC = [[PreferenceWindowController alloc] initWithWindowNibName:@"PreferenceWindowController"];
+    self.preferenceWC = preferenceWC;
+    [preferenceWC showWindow:nil];
+    [preferenceWC.window makeMainWindow];
+    [preferenceWC.window orderFrontRegardless];
+}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application

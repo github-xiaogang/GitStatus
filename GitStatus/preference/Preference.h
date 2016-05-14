@@ -10,6 +10,10 @@
 
 @interface Preference : NSObject
 
-+ (void)setLaunchOnStart;
++ (BOOL)isLaunchAtStartup;
++ (void)setLaunchAtStartup: (BOOL)startup;
+
++ (NSString *)gitClient;
++ (void)setGitClient: (NSString *)gitClient;
 
 @end

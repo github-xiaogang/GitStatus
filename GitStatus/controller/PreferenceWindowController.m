@@ -7,8 +7,14 @@
 //
 
 #import "PreferenceWindowController.h"
+#import "Preference.h"
+
+@import CoreServices;
 
 @interface PreferenceWindowController ()
+
+@property (weak) IBOutlet NSButton *startupButton;
+@property (weak) IBOutlet NSTextField *clientTextfield;
 
 @end
 
@@ -16,8 +22,48 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    BOOL launchAtStartup = [Preference isLaunchAtStartup];
+    self.startupButton.state = launchAtStartup ? 1 : 0;
+    self.clientTextfield.stringValue = [Preference gitClient];
+}
+
+- (IBAction)startupButtonPressed:(id)sender {
+    if(self.startupButton.state == 1){
+        [Preference setLaunchAtStartup:YES];
+    }else{
+        [Preference setLaunchAtStartup:NO];
+    }
+}
+
+- (IBAction)editButtonPressed:(id)sender {
+    NSString * client = self.clientTextfield.stringValue;
+    [Preference setGitClient:client];
+    NSAlert * alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"edit success"];
+    [alert runModal];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
