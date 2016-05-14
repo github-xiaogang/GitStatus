@@ -1,5 +1,8 @@
 # GitStatus
 
+![图标][0]
+
+
 如果你在维护多个使用git的项目，并且经常需要在几个项目之间切换，你可能会遇到忘记某一个repo当前在哪个branch；
 或者一天工作结束后可能会忘记commit一些修改。
 实际上，上面的问题是我最近工作中常遇到的，所以尝试编写这个App来解决。
@@ -24,7 +27,7 @@
 
 ![添加stable分支][3]
 
-
+  [0]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/icon.png
   [1]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/menubar.png
   [2]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/repo.png
   [3]: https://github.com/github-xiaogang/GitStatus/blob/master/readme/stable.png
