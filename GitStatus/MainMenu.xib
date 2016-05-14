@@ -59,6 +59,19 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Help" id="Rbe-VR-ctp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="apple" id="sgB-rc-fWt">
+                        <items>
+                            <menuItem title="Github Home" id="NFK-bR-hov">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="githubMenuPressed:" target="Voe-Tx-rLC" id="HFk-Yb-MzS"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
             </items>
         </menu>
     </objects>

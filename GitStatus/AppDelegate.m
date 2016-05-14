@@ -125,6 +125,10 @@
     [preferenceWC.window orderFrontRegardless];
 }
 
+- (IBAction)githubMenuPressed:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"https://github.com/github-xiaogang/GitStatus"]];
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
