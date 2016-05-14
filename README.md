@@ -13,11 +13,15 @@
 使用：
 1. 运行时菜单栏会显示 `SC` `S` 代表 safe，即所有的repo都处于非stable分支; `C` 代表 clean，即所有的repo的代码都已提交。
 任意一个repo 处于unsafe `S`会显示红色，任意一个repo unclean `C`会显示红色。
-
+![菜单][1]
 2. 点击菜单栏进入repo添加界面，这里可以添加多个repo
+![添加repo][2]
 
 3. 点击repo列表右下角的分支可以进入stable分支设置页面，手动设置repo的stable分支(比如master,release等不应该长期停留的分支)
+![添加stable分支][3]
 
 
 
-
+  [1]: https://github.com/github-xiaogang/GitStatus/readme/menubar
+  [2]: https://github.com/github-xiaogang/GitStatus/readme/repo
+  [3]: https://github.com/github-xiaogang/GitStatus/readme/stable
