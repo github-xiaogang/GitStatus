@@ -15,7 +15,7 @@
 使用：
 
 * 运行时菜单栏会显示 `SC` `S` 代表 safe，即所有的repo都处于非stable分支; `C` 代表 clean，即所有的repo的代码都已提交。
-任意一个repo 处于unsafe `S`会显示红色，任意一个repo unclean `C`会显示红色。
+任意一个repo 处于stable分支 `S`会显示红色，任意一个repo 处于unclean状态 `C`会显示红色。
 
 ![菜单][1]
 
